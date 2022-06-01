@@ -72,6 +72,9 @@ document.querySelectorAll('.letters .letter').forEach(function (letter) {
             let $div = document.createElement('div');
             $div.innerText = letters[0];
             $cell.appendChild($div);
+            if(wrongLetterCount == 9){
+                alert(movie);
+            }
         } else {
             e.target.remove();
             renderMovie();
