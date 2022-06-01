@@ -29,7 +29,7 @@ let arabicAlphabet = [
     ['ى', 'ي'],
 ];
 
-let movie = 'شنبو في المصيدة';
+let movie = movies[Math.floor(Math.random() * (movies.length - 1))].name;
 let movieStructure = [];
 let wrongLetterCount = 0;
 
