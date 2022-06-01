@@ -29,7 +29,7 @@ let arabicAlphabet = [
     ['ى', 'ي'],
 ];
 
-let movie = 'الحب فوق هضبة الهرم';
+let movie = 'شنبو في المصيدة';
 let movieStructure = [];
 let wrongLetterCount = 0;
 
