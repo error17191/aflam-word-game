@@ -1,0 +1,95 @@
+body {
+    text-align: right;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.mistakes {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.mistakes .row {
+    padding: 0;
+    height: 33%;
+}
+
+.mistakes .cell {
+    position: relative;
+    display: inline-block;
+    height: 97%;
+    width: 32%;
+    border: black solid 1px;
+}
+
+.mistakes .cell div{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.letters {
+    letter-spacing: 3px;
+    margin: auto;
+}
+
+.letter {
+    display: inline-block;
+    margin: 5px;
+    border: black solid 1px;
+    min-height: 30px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.wrong_letter {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.word {
+    display: inline-block;
+    margin: 5px 10px;
+    background-color: bisque;
+}
+
+.word .letter {
+    position: relative;
+    background-color: beige;
+}
+
+.word .letter div{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.letters .letter {
+    cursor: pointer;
+    background-color: bisque;
+    padding: 0 10px;
+}
+
+
+.letters .letter:hover {
+    background-color: beige;
+}
