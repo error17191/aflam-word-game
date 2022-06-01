@@ -10,9 +10,9 @@ header {
 }
 
 main {
-  width: 60%;
+  /*width: 60%;*/
   margin: auto;
-  display: grid;
+  /*display: grid;*/
 }
 .mistakes {
   width: 450px;
@@ -26,8 +26,8 @@ main {
 
 .cell {
   background-color: rgb(240, 240, 240);
-  width: 150px;
-  height: 150px;
+  width: 33.333%;
+  height: 33.333%;
   box-sizing: border-box;
   box-shadow: 0px 0px 0px 1px black inset;
   text-align: center;
@@ -106,4 +106,11 @@ main {
 
 .letters .letter:hover {
   background-color: rgb(240, 240, 240);
+}
+
+@media(max-width: 500px) {
+    .mistakes{
+        width: 300px;
+        height: 300px;
+    }
 }
