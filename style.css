@@ -76,7 +76,13 @@ main {
 }
 
 .word {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 10px;
+  padding: 5px;
   background-color: rgb(200, 200, 200);
 }
 
