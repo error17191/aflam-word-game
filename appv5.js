@@ -1,5 +1,5 @@
 let arabicAlphabet = [
-    ['ا', 'أ', 'ئ', 'ء', 'ؤ'],
+    ['ا', 'أ', 'ئ', 'ء', 'ؤ', 'آ'],
     'ب',
     ['ت', 'ة'],
     'ث',
@@ -29,7 +29,8 @@ let arabicAlphabet = [
     ['ى', 'ي'],
 ];
 
-let movie = movies[Math.floor(Math.random() * (movies.length - 1))].name;
+// let movie = movies[Math.floor(Math.random() * (movies.length - 1))].name;
+let movie = 'عزبة آدم';
 let movieStructure = [];
 let wrongLetterCount = 0;
 
