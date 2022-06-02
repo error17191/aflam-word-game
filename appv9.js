@@ -1,5 +1,5 @@
 let arabicAlphabet = [
-    ['ا', 'أ', 'ئ', 'ء', 'ؤ', 'آ'],
+    ['ا', 'أ', 'ئ', 'ء', 'ؤ', 'آ', 'إ'],
     'ب',
     ['ت', 'ة'],
     'ث',
@@ -29,7 +29,7 @@ let arabicAlphabet = [
     ['ى', 'ي'],
 ];
 
-let movie = movies[Math.floor(Math.random() * (movies.length - 1))].name;
+let movie = getRandomMovie();
 
 let movieStructure = [];
 let wrongLetterCount = 0;
@@ -137,4 +137,26 @@ function createLetterElement(text, index) {
     element.setAttribute('data-index', index);
 
     return element;
+}
+
+function getRandomMovie(){
+	let movie = movies[Math.floor(Math.random() * (movies.length - 1))].name
+	for(let char of movie.split('')){
+		if(char == ' '){
+			continue;
+		}
+		let isCharFound = false;
+		for (let letters of arabicAlphabet){
+			if(Array.isArray(letters) ? letters.includes(char) : letters == char){
+				isCharFound = true;
+				break;
+			} 
+		}
+		
+		if(!isCharFound){
+			return getRandomMovie();
+		}
+	}
+	
+	return  movie;
 }
