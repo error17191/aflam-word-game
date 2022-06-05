@@ -1,7 +1,19 @@
+html {
+  font-size: 10px;
+}
+
 body {
   text-align: right;
   background-color: rgb(250, 250, 250);
   font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  height: 100vh;
 }
 
 header {
@@ -13,60 +25,80 @@ main {
   margin: auto;
 }
 
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+
 .mistakes {
-  width: 450px;
-  height: 450px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  font-size: 50px;
-  box-shadow: 0 0 0 1px black;
+  font-size: 2.5rem;
 }
 
 .cell {
-  background-color: rgb(240, 240, 240);
   width: 33.333%;
   height: 33.333%;
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px black inset;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.movie {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-items: center;
-  background-color: rgb(220, 220, 220);
-  width: 450px;
-  margin: 0 auto;
-  font-size: 50px;
-  margin-top: 1px;
+.cell:nth-of-type(1), .cell:nth-of-type(2), .cell:nth-of-type(3) {
+  border-top: none;
 }
 
-.letters {
+.cell:nth-of-type(3), .cell:nth-of-type(6), .cell:nth-of-type(9) {
+  border-left: none;
+}
+
+.alphabet {
+  width: 100%;
+  margin: 0 auto;
   letter-spacing: 3px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   justify-items: center;
-  background-color: rgb(240, 240, 240);
-  width: 450px;
-  margin: 0 auto;
 }
 
 .letter {
   display: inline-block;
-  margin: 5px;
+  min-height: 20px;
+  min-width: 20px;
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  padding: 0 10px;
+  margin: 3px;
   border: black solid 2px;
-  min-height: 50px;
-  min-width: 50px;
   text-align: center;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 1.5rem;
+}
+
+.alphabet .letter:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  width: 90%;
+  letter-spacing: 8px;
+  margin: 25px auto 10px auto;
+  font-size: 2rem;
 }
 
 .word {
@@ -75,28 +107,12 @@ main {
   align-content: center;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
-  padding: 5px;
-  background-color: rgb(200, 200, 200);
+  margin: 5px 8px;
 }
 
-.letters .letter {
-  cursor: pointer;
-  background-color: rgb(240, 240, 240);
-  padding: 0 10px;
-}
 
-.letters .letter:hover {
-  background-color: rgb(240, 240, 240);
-}
-
-@media (max-width: 500px) {
-  .mistakes {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .movie, .mistakes, .letters{
-    width: 300px;
+@media (min-width: 850px) {
+  .container{
+    box-shadow: 0 0 1px;
   }
 }

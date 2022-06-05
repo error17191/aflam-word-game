@@ -37,17 +37,17 @@ let wrongLetterCount = 0;
 for (let i = 0; i < arabicAlphabet.length; i++) {
     let letters = arabicAlphabet[i]
     if (Array.isArray(letters)) {
-        document.querySelector('.letters').appendChild(
-            createLetterElement(letters.join(' - '), i)
+        document.querySelector('.alphabet').appendChild(
+            createLetterElement(i === 0 ? 'ا - همزة' : letters.join(' - '), i)
         );
     } else {
-        document.querySelector('.letters').appendChild(
+        document.querySelector('.alphabet').appendChild(
             createLetterElement(letters, i)
         );
     }
 }
 
-document.querySelectorAll('.letters .letter').forEach(function (letter) {
+document.querySelectorAll('.alphabet .letter').forEach(function (letter) {
     letter.addEventListener('click', function (e) {
         if (wrongLetterCount == 9) {
             return;
@@ -117,14 +117,8 @@ function createWordElement(word) {
 }
 
 function createMovieLetterElement(letter) {
-    let $letter = document.createElement('div');
-    $letter.classList.add('letter');
-    if (letter.solved) {
-        let $innerLetter = document.createElement('div');
-        $innerLetter.innerText = letter.letter;
-        $letter.appendChild($innerLetter);
-    }
-
+    let $letter = document.createElement('span');
+	$letter.innerText = letter.solved ? letter.letter : '-';
     return $letter
 }
 
