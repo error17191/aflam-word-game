@@ -10,9 +10,7 @@ header {
 }
 
 main {
-  /*width: 60%;*/
   margin: auto;
-  /*display: grid;*/
 }
 
 .mistakes {
@@ -22,7 +20,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   font-size: 50px;
-  box-shadow: 0px 0px 0px 1px black;
+  box-shadow: 0 0 0 1px black;
 }
 
 .cell {
@@ -30,8 +28,11 @@ main {
   width: 33.333%;
   height: 33.333%;
   box-sizing: border-box;
-  box-shadow: 0px 0px 0px 1px black inset;
+  box-shadow: 0 0 0 1px black inset;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie {
@@ -41,7 +42,7 @@ main {
   justify-items: center;
   background-color: rgb(220, 220, 220);
   width: 450px;
-  margin: 0px auto;
+  margin: 0 auto;
   font-size: 50px;
   margin-top: 1px;
 }
@@ -54,7 +55,7 @@ main {
   justify-items: center;
   background-color: rgb(240, 240, 240);
   width: 450px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 .letter {
@@ -68,14 +69,6 @@ main {
   font-size: 25px;
 }
 
-.wrong_letter {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .word {
   display: flex;
   flex-direction: row;
@@ -85,18 +78,6 @@ main {
   margin: 10px;
   padding: 5px;
   background-color: rgb(200, 200, 200);
-}
-
-.word .letter {
-  position: relative;
-}
-
-.word .letter div {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .letters .letter {
