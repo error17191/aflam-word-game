@@ -63,7 +63,7 @@ function joinMultiplayerGame() {
 	document.querySelector('.share-game-box .body p').innerHTML = window.location.href;
 
 	document.querySelector('.name-section').classList.add('hidden');
-	document.querySelector('.share-game-section').classList.remove('hidden');
+	// document.querySelector('.share-game-section').classList.remove('hidden');
 	document.querySelector('.waiting-list').classList.remove('hidden');
 
 }
@@ -74,6 +74,20 @@ socket.on('update-players', newPlayers => {
 	renderPlayerList();
 });
 
+socket.on('start-game', randomMovie => {
+	document.querySelector('#arena').classList.add('hidden');
+	movie = randomMovie;
+	prepareMovieStructure();
+	renderMovie();
+});
+
+socket.on('win', player => {
+	if (player.id == myID) {
+		alert('مبروك كسبت');
+	} else {
+		alert(player.name + ' كسب خلاص');
+	}
+});
 
 function copyRoomLink() {
 	navigator.clipboard.writeText(window.location.href);
@@ -87,12 +101,25 @@ function renderPlayerList() {
 		$li.innerText = myID == player.id ? 'أنت' : player.name;
 		$ul.appendChild($li);
 	});
+
+	if (players.length > 1) {
+		document.querySelector('#ready-for-game').classList.remove('hidden');
+	}
+}
+
+function readyForTheGame() {
+	socket.emit('player-ready', {
+		roomUUID,
+		playerID: myID
+	});
 }
 
 document.querySelector('.my-name-form').addEventListener('submit', event => {
 	event.preventDefault();
 	console.log('here');
 	console.log(isCreator);
+	isMultiplayer = true;
+	movieLength = 0;
 	if (isCreator) {
 		createMultiplayerGame();
 	} else {
