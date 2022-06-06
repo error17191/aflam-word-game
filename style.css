@@ -2,6 +2,10 @@ html {
   font-size: 10px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   text-align: right;
   background-color: rgb(250, 250, 250);
@@ -31,6 +35,12 @@ h1 {
   margin-bottom: 20px;
 }
 
+#multiplayer {
+  text-align: center;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
 .mistakes {
   width: 150px;
@@ -110,9 +120,116 @@ h1 {
   margin: 5px 8px;
 }
 
+#arena {
+  background-color: rgb(250, 250, 250);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#arena .container {
+  background-color: white;
+  padding-top: 1px;
+}
+
+#arena .name-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#arena .share-game-section {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.share-game-box {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.share-game-box .header {
+  font-size: 1.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 5px;
+  background-color: rgb(250, 250, 250);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+}
+
+.share-game-box .body {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  padding-right: 5px;
+}
+
+
+#arena h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#arena .waiting-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#arena .waiting-list ul {
+  width: 60%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#arena .waiting-list ul li {
+  padding: 12px;
+  background-color: #F0F0F0;
+}
+
+#arena .waiting-list ul li:nth-of-type(n+2){
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#arena input.my-name {
+  display: block;
+  height: 2rem;
+  padding: 3px;
+  width: 60%;
+}
+
+.start-btn {
+  display: block;
+  margin: auto;
+  background-color: rgb(250, 250, 250);
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#arena .share-game-box button {
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 5px 10px;
+}
 
 @media (min-width: 640px) {
-  .container{
+  .container {
     box-shadow: 0 0 1px;
   }
 }
